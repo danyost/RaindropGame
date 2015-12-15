@@ -7,26 +7,28 @@ class Raindrop{
   }
   
   void fall(){
+    radius += (40-radius)*0.01f;
+    
     vel.y += 0.098f;
+    
     loc.add(vel);
   }
   
   void display(){
-    noStroke();
     fill(255, 255, 255, 100);
     ellipse(loc.x, loc.y, radius*2, radius*2);
   }
   
   void reset(){
-    radius = random(40, 50);
+    radius = 10;
     
     loc = new PVector(random(width), - radius);
     
     vel = new PVector(0, 2);
   }
   
-  boolean isInContactWith(PVector point){
-    if(point.dist(loc) < radius)
+  boolean isInContactWith(Bucket bucket){
+    if(bucket.pos.dist(loc) < radius + bucket.radius)
       return true;
     else
       return false;
