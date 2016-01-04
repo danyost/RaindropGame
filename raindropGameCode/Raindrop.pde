@@ -15,14 +15,14 @@ class Raindrop{
   }
   
   void display(){
-    fill(255, 255, 255, 100);
+    fill(255, 255, 255, 250);
     ellipse(loc.x, loc.y, radius*2, radius*2);
   }
   
   void reset(){
     radius = 10;
     
-    loc = new PVector(random(width), - radius);
+    loc = new PVector(random(width), -radius);
     
     vel = new PVector(0, 2);
   }

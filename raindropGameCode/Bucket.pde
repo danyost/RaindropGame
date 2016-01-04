@@ -10,8 +10,8 @@ class Bucket{
   }
   
   void moveToMouse(){
-    pos.x -= (pos.x - mouseX)*0.25f;
-    pos.y -= (pos.y - mouseY)*0.25f;
+    pos.x -= (pos.x - mouseX)*0.5f;
+    pos.y -= (pos.y - mouseY)*0.5f;
   }
   
   void display(){
